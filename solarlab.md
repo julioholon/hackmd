@@ -1,3 +1,4 @@
+[![hackmd-github-sync-badge](https://hackmd.io/P4wRmBm1TDylISw4W_3W2g/badge)](https://hackmd.io/P4wRmBm1TDylISw4W_3W2g)
 ## Tokenomics SolarLab DAO
 
 ### Premissas
