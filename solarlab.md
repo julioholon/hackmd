@@ -8,9 +8,9 @@ O SolarLab quer implementar uma DAO para reconhecer o trabalho dos fundadores in
 
 ### Estrutura de tokens
 
-- **SLAB**: token patrimonial fungível, quantidade ~~fixa~~==variável==, transferível, representa um percentual do valor total acumulado nos cofres pela DAO, pode ser queimado para obter parte dos ~~dividendos~~==cofres da DAO==.
+- **SLAB**: token patrimonial fungível, quantidade variável, transferível, representa um percentual do valor total acumulado nos cofres pela DAO, pode ser queimado para obter parte dos cofres da DAO.
 
-- **SLABG**: token de governança fungível, quantidade variável, não transferível, que representa o poder de voto nas decisões da DAO. Criado quando entra mais gente, queimado quando alguém é banido por votação ~~ou quando alguém deixa de contribuir por mais de 1 ano (nesse caso, pode reativar, se não estiver banido)~~.
+- **SLABG**: token de governança fungível, quantidade variável, não transferível, que representa o poder de voto nas decisões da DAO. Criado quando entra mais gente, queimado quando alguém é banido por votação.
 
 - **MATIC**: token fungível de referência, que é usado para acumular valor nos cofres da DAO, recebido por meio de investimento, apoio ou doação.
 
@@ -27,22 +27,26 @@ Os Títulos permitem aos stakeholders serem reconhecidos. São tokens não fung�
 - **Conectade** (0 SLABG): pessoas da comunidade que estão interessadas em conhecer mais e participar das discussões
 - **Investidor Série X** (SLABG variável): investidores que adquirem uma quantidade mínima de SLAB, podem receber algo entre 10 e 100 SLABG, cada série de investimento é um token separado
 
-==Apesar da DAOHaus suportar NFTs, o sistema de títulos não vai funcionar inicialmente com a DAOHaus, então eles podem servir de referência para criar os SLABG iniciais.==
+Apesar da DAOHaus suportar NFTs, o sistema de títulos não vai funcionar inicialmente com a DAOHaus, então eles podem servir de referência para criar os SLABG iniciais.
 
 ### Distribuição inicial
 
 - **SLAB**:
-  TOTAL: 1 ~~bilhão~~==milhão== de SLAB ==criados inicialmente nos cofres==
+
+  TOTAL: 1 milhão de SLAB criados sob demanda
+  
   VALOR de venda: 1 SLAB = ==?== USDC (==calcular==)
+  
   VALOR de compra: proporcional do valor do cofre
-  - 20% **Fundadores** (~~concedido com *vesting* de 1 ano, depois~~ distribuído ==via planilha do money pile==~~entre founder e cofounder~~)
+
+  - 20% **Fundadores** (distribuído via planilha do money pile)
   - 30% **Membres** (pequenas quantidades distribuídas pela DAO a cada trimestre para quem energiza papéis: fundadore, cofundadore, membre)
   - 25% **Investidores** (reservado para ser vendido para investidores)
   - 25% **Comunidade** (distribuído em ações de marketing e divulgação, embaixadores, parceires e outros stakeholders)
 
 - **SLABG**:
   TOTAL: variável
-  - Cada stakeholder recebe SLABG equivalente ao seu nível de governança ao entrar na DAO, se for promovido, recebe mais proporcionalmente. ~~pode ativar apenas um Título NFT, obtendo o equivalente de SLABG do título~~
+  - Cada stakeholder recebe SLABG equivalente ao seu nível de governança ao entrar na DAO, se for promovido, recebe mais proporcionalmente.
 
 ### Iniciativas
 As iniciativas são tocadas pelos membres, que energizam papéis no círculo geral e nos subcírculos. Em geral as iniciativas ativas tem um papel dedicado ou um círculo próprio.
@@ -88,19 +92,19 @@ Quando uma pessoa participa de um ritual de Apoio, ela tem a opção de indicar 
 Quórum: 60%
 Participação mínima: 20%
 Tempo da votação: 7 dias
-==Tempo de saída: 1 dia (tempo para sair da DAO caso tenha uma objeção forte a uma votação aprovada)==
+Tempo de saída: 1 dia (tempo para sair da DAO caso tenha uma objeção forte a uma votação aprovada)
 
 ### Rituais
 
 #### 1. Fundação
 Ritual realizado na abertura da DAO, onde fundadores se reunem para criar a DAO e fazer a criação dos tokens iniciais, atribuições de títulos, configurações dos montantes e distribuição inicial de tokens.
 
-==**Passos para o ritual de Fundação:**==
-==- Todos os membros iniciais precisam criar suas carteiras==
-==- Lista de endereços e valores de SLAB e SLABG dos membros iniciais==
-==- Definir nome e símbolo do tokens==
-==- Revisar parâmetros da DAO==
-==- Criar a DAO==
+**Passos para o ritual de Fundação:**
+- Todos os membros iniciais precisam criar suas carteiras==
+- Lista de endereços e valores de SLAB e SLABG dos membros iniciais
+- Definir nome e símbolo do tokens
+- Revisar parâmetros da DAO
+- Criar a DAO
 
 ==(Gestão de Iniciativas e orçamentos?)==
 
@@ -110,19 +114,15 @@ Ritual onde um membre da comunidade decide se engajar e entrar para dentro da me
 Durante o ritual, depois de contar um poudo da história do Solar Lab:
 1) as membres atuais fazem perguntas para a candidate aumentar a conexão e conhecimento
 2) a candidate faz perguntas aos membres
-3) a candidate cria uma proposta ==de entrada na DAO para receber o valor de SLABG correspondente== ~~para receber o Título de  Membre na DAO~~
+3) a candidate cria uma proposta de entrada na DAO para receber o valor de SLABG correspondente
 4) assincronamente, as membres votam
-
-~~Depois da aprovação a nova membre precisa ativar seu Título na DAO para receber os SLABGs.~~
 
 Então a pessoa recebe um onboarding da governança e ferramentas.
 
 #### 3. Banimento de Membre
-Qualquer Membre pode abrir uma proposta na DAO para banimento de outro Membre, se tiver votação positiva, a membre será excluída de seus SLABG~~, e não poderá ativar mais nenhum Título.~~
+Qualquer Membre pode abrir uma proposta na DAO para banimento de outro Membre, se tiver votação positiva, a membre será excluída de seus SLABG
 
 Certamente esse procedimento precisa ser usado somente em último caso quando as relações já não suportam mais diálogo nem escuta.
-
-~~Membres inatives automaticamente perdem seus SLABGs após 1 ano sem votar em nenhum projeto, então não precisa fazer o banimento nesses casos.~~
 
 #### 4. Gestão de Iniciativas
 Qualquer membre pode abrir uma proposta a qualquer momento para criar, modificar ou arquivar uma iniciativa ativa (que vai receber distribuição de orçamento trimestral). Em geral para criar uma nova é preciso informar:
@@ -172,19 +172,7 @@ Em geral o montante de onde saem os tokens é o Comunidade.
 
 Apoiadores também recebem o Título de **Apoiadore**, e podem indicar qual **Embaixadore** que fez o convite.
 
-~~PS: Dependendo da tecnologia de DAO escolhida, pode ser necessário usar ferramentas externas para esse ritual.~~
-
-==A DAOHaus não suporta crowdfunding diretamente, recomenda-se usar a ferramenta [JuiceBox](https://juicebox.money/) ou [Yeeter](https://yeet.daohaus.club/).==
+A DAOHaus não suporta crowdfunding diretamente, recomenda-se usar a ferramenta [JuiceBox](https://juicebox.money/) ou [Yeeter](https://yeet.daohaus.club/).
 
 #### 7. Abertura de Série de Investimento
-Esse ritual começa quando um membre cria uma proposta de Abertura de Série de Investimento ==(DAO Token Swap)==, e essa proposta é aprovada. ==Essa proposta precisa ser aberta para cada oferta de venda direta de SLAB.==
-
-~~Depois de aprovada é preciso criar a série limitada de Títulos de **Investidore**, e colocar eles a venda na DAO.~~
-
-~~Para isso é preciso definir:
-~~- Nome da Série de Investimento~~
-~~- Data de início~~
-~~- Quantidade de frações~~
-~~- Custo em USDC~~
-~~- Quantidade de SLABG que o Título confere~~
-~~- Fazer upload da arte para a série~~
+Esse ritual começa quando um membre cria uma proposta de Abertura de Série de Investimento (DAO Token Swap), e essa proposta é aprovada. Essa proposta precisa ser aberta para cada oferta de venda direta de SLAB.
