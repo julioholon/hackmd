@@ -35,6 +35,8 @@ Os principais tipos de recursos são:
 - **Acordos**: instrumentos para desenvolver a governança dos coletivos;
 - **Necessidades**: algo que alguém indicou precisar.
 
+Nenhum token precisa ser número inteiro: todos os tokens e cotas têm pelo menos duas casas decimais, porque os valores se criam e se gastam em frações.
+
 Observação: por uma escolha de design, não vamos mapear dinheiro fiduciário (dinheiro criado por bancos, sem lastro em recursos reais) nem o tempo das pessoas. Entendemos que esse sistema permite transcender esses marcadores.
 
 O nome completo em português é o nome oficial de cada token. As formas curtas — **Cred**, **Rep**, **Grat** e **Pros** — são as usadas nas telas do aplicativo, nas fórmulas e nas listas. Elas não têm plural e não mudam de forma.
@@ -132,7 +134,7 @@ Essa camada só muda com votação de toda a comunidade, nunca por decisão de u
 
 Sempre que for necessário mudar a Constituição ou um Meta-Acordo — criar regras que impactem todos os Círculos de uma localidade — a proposta vai para votação em Assembleia virtual, onde cada membro do Ecomunal afetado tem direito de voto proporcional à sua reputação no eixo **Representatividade (Rep)**.
 
-O peso do voto usa **compressão logarítmica**: o peso é `log10(Rep)`, com piso de **1** para quem ainda não acumulou 10 Rep. Assim, quem tem 100 Rep pesa 2, quem tem 1.000 pesa 3, e quem tem 1.000.000 pesa 6. Como o Rep nunca diminui, alguém com muitos anos de casa teria um peso insuperável para quem está chegando; a compressão mantém a Assembleia próxima de uma pessoa, um voto, com as pessoas mais antigas tendo apenas um pouco mais de poder, e reduz a Tirania da Maioria[^4] sem transformar antiguidade em autoridade. O voto quadrático clássico usa a raiz quadrada (100 pesaria 10 e 1.000 pesaria 31,6), o que dá muito mais poder às pessoas antigas — não é o que queremos aqui.
+O peso do voto é a própria **Rep**, sem compressão na hora de votar — a compressão acontece na hora de **ganhar** Rep. Como a Rep sobe no máximo +1 por ciclo lunar, e só quando algo é comparativamente maior que a Rep que a pessoa já tem, ela continua pequena depois de muitos anos: quem tem anos de casa pesa 4 ou 5, e quem chegou agora pesa 1. A Assembleia fica naturalmente próxima de uma pessoa, um voto, com as pessoas mais antigas tendo apenas um pouco mais de poder, sem transformar antiguidade em autoridade, e é o que responde à Tirania da Maioria[^4].
 
 O processo de votação dura o ciclo todo para que todos os envolvidos tenham tempo hábil de receber notificação pelo aplicativo e votar a favor ou se abster (não é possível votar "contra"). Todo o processo é conduzido pelo próprio aplicativo, sem facilitador humano. A votação fica **oculta até o encerramento**: ninguém vê quem votou nem a parcial, e o resultado só é revelado no final.
 
@@ -170,9 +172,15 @@ A reputação é medida em três eixos, porque um número só não dá conta de 
 
 **Credibilidade (Cred)** — registro de compromissos cumpridos. É local, de cada Círculo, e decai a cada ciclo, para que o valor seja sempre relativo ao ciclo atual: quem teve credibilidade no passado não necessariamente continua tendo, porque as coisas mudam e ficam mais complexas. Sem isso, uma pessoa que levasse o lixo para fora o mês inteiro ganharia muita Credibilidade e depois nunca mais precisaria levar o lixo para fora nem fazer mais nada. A **Credibilidade é sempre atribuída de forma lógica e matemática, calculada pela IA a partir da necessidade do coletivo**: se o coletivo está precisando muito de um computador, quem faz a função Mapear e traz um computador, ou a função Consertar e conserta um, ganha mais Credibilidade do que quem mapeia ou conserta um recurso que não está sendo necessário agora. A Função de Revisar pode auditar e revisar esses cálculos, e como o eixo decai sozinho a cada ciclo, não tem tanto problema se um valor ficar superestimado: o tempo corrige. Serve para reconhecimento e para ampliar o acesso a recursos.
 
-**Representatividade (Rep)** — registro de participação sustentada no todo. É global, da pessoa, e nunca expira: não diminui por ausência, nem por doença, nem por cuidado com alguém. Ganha-se seguindo os acordos e ficando por mais tempo na comunidade. Vem de regras e de limiares automáticos, nunca do julgamento da IA, porque é ela que dá peso ao voto.
+**Representatividade (Rep)** — registro de participação sustentada no todo. É global, da pessoa, e nunca expira: não diminui por ausência, nem por doença, nem por cuidado com alguém. Sobe devagar e por poucos caminhos: um acordo ou projeto aprovado que seja comparativamente maior que a Rep que a pessoa já tem — na prática, `log10(tamanho) > Rep`, sendo o tamanho o do projeto ou o total de votos recebidos num acordo —, a liderança do Placar de Cred no ciclo, ou a liderança do Placar de Grat no ciclo. Cada nível de Rep custa cerca de 10 vezes mais que o anterior. Começa-se com **1 Rep**, recebida como celebração de boas-vindas quando a pessoa entra na comunidade. Seguir os acordos não é uma fonte de Rep: é a condição para manter a que já se tem. Vem de regras e de limiares automáticos, nunca do julgamento da IA, porque é ela que dá peso ao voto.
 
-**Gratidão (Grat)** — o reconhecimento que damos uns aos outros. A **Gratidão é sempre atribuída por pessoas**, de formas abstratas, por atos que não são trabalho: fazer arte, ajudar de um jeito que não se mede, dar exemplo de vida. Nenhuma IA entra no meio, porque se um algoritmo calcula quanto gratidão alguém sente, não é gratidão. Ela é zerada no fim de cada ciclo: a pessoa recebe a Gratidão, agradece, aproveita o que ela rende, e o saldo volta ao início. Quem deu também não guarda crédito por ter dado. Serve para reconhecimento e para ampliar o acesso a recursos.
+**Gratidão (Grat)** — o reconhecimento que damos uns aos outros. A **Gratidão é sempre atribuída por pessoas**, de formas abstratas, por atos que não são trabalho: fazer arte, ajudar de um jeito que não se mede, dar exemplo de vida. Nenhuma IA entra no meio, porque se um algoritmo calcula quanto gratidão alguém sente, não é gratidão. Quem reconhece **cria** uma Gratidão nova para quem recebe: ela não sai do saldo de quem dá, e não é transferência. O que se recebe é só seu — **Gratidão recebida não se repassa nem se redistribui**, e não se mistura com o valor que cada um tem para usar. Ela é zerada no fim de cada ciclo: a pessoa recebe a Gratidão, agradece, aproveita o que ela rende, e o saldo volta ao início. Quem deu também não guarda crédito por ter dado. Serve para reconhecimento e para ampliar o acesso a recursos.
+
+**Como se cria Gratidão.** O **poder de mint** de uma pessoa é a sua Rep **no início do ciclo** — ganhos de Rep durante o ciclo só contam para o próximo. Na primeira vez que agradece alguém no ciclo, a pessoa cria para quem recebe uma Gratidão igual ao seu poder de mint. Em cada agradecimento seguinte, cria **10% a menos** que no anterior.
+
+Não existe limite de quantas vezes se pode agradecer, nem de quantas pessoas: o limite é sobre o **total criado**, que nunca passa de **10 vezes o poder de mint** num ciclo, por mais agradecimentos que se faça. O contador zera na virada do ciclo, junto com a Gratidão.
+
+Isso vale igual para agradecer a mesma pessoa muitas vezes ou a muitas pessoas diferentes — e nunca é uma transferência: o que cada um recebe é novo e é só seu.
 
 Algumas formas de ganhar e perder reputação:
 1) Credibilidade
@@ -184,9 +192,11 @@ Algumas formas de ganhar e perder reputação:
 • ❌Perde Cred a cada ciclo, por ser sempre relativa ao ciclo atual.
 
 2) Representatividade
-• ✅Ganha Rep ao propor novos acordos que sejam aceitos;
-• ✅Ganha Rep com o tempo, por fazer parte da comunidade;
-• ✅Ganha Rep ao seguir os acordos;
+• ✅Ganha Rep ao ter um acordo ou projeto aprovado que seja maior que a sua Rep atual na escala logarítmica;
+• ✅Ganha Rep ao liderar o Placar de Cred no ciclo;
+• ✅Ganha Rep ao liderar o Placar de Grat no ciclo;
+• ✅Ganha 1 Rep ao entrar na comunidade, como celebração de boas-vindas;
+• ✅No máximo +1 Rep por ciclo lunar, mesmo somando os três caminhos acima;
 • ❌Perde Rep ao quebrar acordos, caso não busque repará-los;
 • ❌Perde Rep ao causar danos a recursos e relações, caso não busque reparar.
 
@@ -213,6 +223,20 @@ Nenhum eixo serve para atribuir caráter. O Ecomunal pode dizer "340 compromisso
 >Ter a reputação explícita e visível para todos faz com que ela seja menos abusável.
 >
 >É por isso que a reputação é mapeada em eixos distintos: o local e pessoal (Cred e Grat) e o global e grupal (Rep).
+
+#### Placar
+
+O aplicativo mostra um **Placar** em cada localidade, com quatro listas visíveis para todo mundo: quem tem mais **Cred**, mais **Grat**, mais **Rep** e mais **Pros** no ciclo.
+
+No fecho de cada ciclo lunar, os líderes de **Cred** e de **Grat** ganham **+1 Rep**. Os líderes de Rep e de Pros não ganham nada a mais: quem está no topo dessas listas já recebeu o que elas representam.
+
+Uma pessoa ganha **no máximo +1 Rep por ciclo lunar**, venha de onde vier: um acordo ou projeto aprovado, a liderança de Cred ou a liderança de Grat. Quem alcançar os três no mesmo ciclo ainda ganha só +1.
+
+Em caso de empate, todos os empatados no topo recebem o mesmo bônus.
+
+A lista de Pros mostra **quanto cada pessoa usou da sua cota no ciclo**, e não o saldo que sobrou: assim o Placar reconhece quem circulou recurso, em vez de quem guardou.
+
+Ao fim de cada ciclo acontece a **cerimônia**: o aplicativo anuncia publicamente quem liderou cada uma das quatro listas e quem ganhou Rep. A cerimônia faz parte do reconhecimento — não é um detalhe de tela.
 
 #### Prosperidade (Pros)
 
@@ -269,7 +293,7 @@ Quando os dois lados são o mesmo Círculo a votação é mais simples. Um proje
 
 **Como se vota**
 
-A votação do projeto segue as mesmas regras da votação da Assembleia: dura o ciclo todo, é conduzida pelo aplicativo, não existe voto "contra" — vota-se a favor ou se abstém —, o peso do voto é `log10(Rep)` com piso de 1, a discussão fica no Fórum e a contagem só é revelada no encerramento. Como na Assembleia, existe um limite de projetos em votação por ciclo.
+A votação do projeto segue as mesmas regras da votação da Assembleia: dura o ciclo todo, é conduzida pelo aplicativo, não existe voto "contra" — vota-se a favor ou se abstém —, o peso do voto é a **Rep**, a discussão fica no Fórum e a contagem só é revelada no encerramento. Como na Assembleia, existe um limite de projetos em votação por ciclo.
 
 O que muda é o que define o limiar: em vez do tipo de mudança, é o **porte** do projeto.
 
@@ -321,4 +345,4 @@ https://earthbound.report/2018/01/15/elinor-ostroms-8-rules-for-managing-the-com
 [^3]: Meta-Acordos da Organização Orgânica (O2):
 https://o2.targetteal.com/meta-acordos
 
-[^4]: **Reflections on Quadratic Voting as a Hackathon Judging Mechanism**: https://medium.com/codeless-conduct/reflections-on-quadratic-voting-as-a-hackathon-judging-mechanism-b5ed299fe56 — leitura sobre compressão do poder de voto. A fórmula usada aqui é **logarítmica**, não quadrática.
+[^4]: **Reflections on Quadratic Voting as a Hackathon Judging Mechanism**: https://medium.com/codeless-conduct/reflections-on-quadratic-voting-as-a-hackathon-judging-mechanism-b5ed299fe56 — leitura sobre compressão do poder de voto. Aqui a compressão acontece na hora de ganhar Rep, não na hora de votar.
