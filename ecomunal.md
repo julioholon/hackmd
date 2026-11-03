@@ -172,7 +172,7 @@ A reputação é medida em três eixos, porque um número só não dá conta de 
 
 **Credibilidade (Cred)** — registro de compromissos cumpridos. É local, de cada Círculo, e decai a cada ciclo, para que o valor seja sempre relativo ao ciclo atual: quem teve credibilidade no passado não necessariamente continua tendo, porque as coisas mudam e ficam mais complexas. Sem isso, uma pessoa que levasse o lixo para fora o mês inteiro ganharia muita Credibilidade e depois nunca mais precisaria levar o lixo para fora nem fazer mais nada. A **Credibilidade é sempre atribuída de forma lógica e matemática, calculada pela IA a partir da necessidade do coletivo**: se o coletivo está precisando muito de um computador, quem faz a função Mapear e traz um computador, ou a função Consertar e conserta um, ganha mais Credibilidade do que quem mapeia ou conserta um recurso que não está sendo necessário agora. A Função de Revisar pode auditar e revisar esses cálculos, e como o eixo decai sozinho a cada ciclo, não tem tanto problema se um valor ficar superestimado: o tempo corrige. Serve para reconhecimento e para ampliar o acesso a recursos.
 
-**Representatividade (Rep)** — registro de participação sustentada no todo. É global, da pessoa, e nunca expira: não diminui por ausência, nem por doença, nem por cuidado com alguém. Sobe devagar e por poucos caminhos: um acordo ou projeto aprovado que seja comparativamente maior que a Rep que a pessoa já tem — na prática, `log10(tamanho) > Rep`, sendo o tamanho o do projeto ou o total de votos recebidos num acordo —, a liderança do Placar de Cred no ciclo, ou a liderança do Placar de Grat no ciclo. Cada nível de Rep custa cerca de 10 vezes mais que o anterior. Começa-se com **1 Rep**, recebida como celebração de boas-vindas quando a pessoa entra na comunidade. Seguir os acordos não é uma fonte de Rep: é a condição para manter a que já se tem. Vem de regras e de limiares automáticos, nunca do julgamento da IA, porque é ela que dá peso ao voto.
+**Representatividade (Rep)** — registro de participação sustentada no todo. É global, da pessoa, e nunca expira: não diminui por ausência, nem por doença, nem por cuidado com alguém. Sobe devagar e por poucos caminhos: um acordo ou projeto aprovado que seja comparativamente maior que a Rep que a pessoa já tem — na prática, `log10(tamanho) > Rep`, sendo o tamanho o do projeto ou o total de votos recebidos num acordo —, a liderança do Placar de Cred no ciclo, ou a liderança do Placar de Grat no ciclo Cada nível de Rep custa cerca de 10 vezes mais que o anterior. Começa-se com **1 Rep**, recebida como celebração de boas-vindas quando a pessoa entra na comunidade. Seguir os acordos não é uma fonte de Rep: é a condição para manter a que já se tem. Vem de regras e de limiares automáticos, nunca do julgamento da IA, porque é ela que dá peso ao voto.
 
 **Gratidão (Grat)** — o reconhecimento que damos uns aos outros. A **Gratidão é sempre atribuída por pessoas**, de formas abstratas, por atos que não são trabalho: fazer arte, ajudar de um jeito que não se mede, dar exemplo de vida. Nenhuma IA entra no meio, porque se um algoritmo calcula quanto gratidão alguém sente, não é gratidão. Quem reconhece **cria** uma Gratidão nova para quem recebe: ela não sai do saldo de quem dá, e não é transferência. O que se recebe é só seu — **Gratidão recebida não se repassa nem se redistribui**, e não se mistura com o valor que cada um tem para usar. Ela é zerada no fim de cada ciclo: a pessoa recebe a Gratidão, agradece, aproveita o que ela rende, e o saldo volta ao início. Quem deu também não guarda crédito por ter dado. Serve para reconhecimento e para ampliar o acesso a recursos.
 
@@ -226,7 +226,7 @@ Nenhum eixo serve para atribuir caráter. O Ecomunal pode dizer "340 compromisso
 
 #### Placar
 
-O aplicativo mostra um **Placar** em cada localidade, com quatro listas visíveis para todo mundo: quem tem mais **Cred**, mais **Grat**, mais **Rep** e mais **Pros** no ciclo.
+O aplicativo mostra um **Placar** em cada localidade, com quatro listas visíveis para todo mundo: quem **ganhou** mais **Cred**, quem **recebeu** mais **Grat**, quem tem mais **Rep** e quem mais **usou Pros** no ciclo.
 
 No fecho de cada ciclo lunar, os líderes de **Cred** e de **Grat** ganham **+1 Rep**. Os líderes de Rep e de Pros não ganham nada a mais: quem está no topo dessas listas já recebeu o que elas representam.
 
@@ -234,9 +234,19 @@ Uma pessoa ganha **no máximo +1 Rep por ciclo lunar**, venha de onde vier: um a
 
 Em caso de empate, todos os empatados no topo recebem o mesmo bônus.
 
+**As listas de Cred e de Grat medem o ciclo, não o saldo.** O Placar reconhece quem **ganhou mais Credibilidade** e quem **recebeu mais Gratidão** no ciclo — o valor acumulado não entra. É o mesmo princípio que já valia para a Prosperidade, e ele existe para que o Placar reconheça quem circulou, em vez de quem guardou. Sem isso, quem tivesse acumulado muita Credibilidade ficaria no topo da lista por anos sem ter feito nada naquele ciclo, e continuaria levando a Rep.
+
+**A lista de Rep é a única que mostra estoque**, e por um motivo: a Rep é o único eixo que não expira por tempo. As outras três respondem à mesma pergunta — o que aconteceu neste ciclo —, e a Rep responde a outra: há quanto tempo você faz parte disso.
+
+Repetir o topo das listas é difícil nos dois eixos, por motivos diferentes. A **Gratidão zera a cada ciclo**, então voltar a ser a pessoa mais reconhecida depende de ser reconhecida de novo, mais do que nunca. E a **Credibilidade** exige continuar sendo quem mais entrega exatamente o que o coletivo precisa: se outra pessoa entregar mais no ciclo, a liderança muda de mãos. A Credibilidade continua decaindo 10% na virada, o que importa para o acesso aos recursos e para o tamanho da cota, mas não muda a lista, que já é do ciclo.
+
 A lista de Pros mostra **quanto cada pessoa usou da sua cota no ciclo**, e não o saldo que sobrou: assim o Placar reconhece quem circulou recurso, em vez de quem guardou.
 
 Ao fim de cada ciclo acontece a **cerimônia**: o aplicativo anuncia publicamente quem liderou cada uma das quatro listas e quem ganhou Rep. A cerimônia faz parte do reconhecimento — não é um detalhe de tela.
+
+**Cada Círculo local tem o seu próprio Placar.** A Credibilidade é local: quem fez muito pela Ecovila Passo Fundo tem esse valor lá, nos Círculos de gestão daquela localidade. O ganho, porém, atravessa a fronteira — **a Rep que ele rende vale para todo o Ecomunal**, em qualquer localidade. Por isso todos os Círculos locais anunciam os seus placares no fecho do ciclo e celebram os seus destaques.
+
+Só entram nesse anúncio os Círculos locais que tiverem **Rep suficiente e gente suficiente**. Um Círculo local muito pequeno ou recém-formado fica de fora do Placar, para evitar abusos: com pouca gente é fácil combinar de se revezar no topo e colher Rep que vale para todo o Ecomunal.
 
 #### Prosperidade (Pros)
 
